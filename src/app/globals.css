@@ -6,10 +6,22 @@
 }
 
 @theme inline {
+  /* Existing */
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* Himalaya Gold */
+
+  --color-maroon-950: #2D0F11;
+  --color-orange-700: #9C310B;
+  --color-orange-600: #BA3A0A;
+  --color-cream-50: #FFFFF2;
+
+  --font-sans: var(--font-montserrat);
+  --font-display: var(--font-amita);
+
+  --container-content: 1280px;
 }
 
 @media (prefers-color-scheme: dark) {
