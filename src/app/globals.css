@@ -17,12 +17,26 @@
   --color-orange-700: #9C310B;
   --color-orange-600: #BA3A0A;
   --color-cream-50: #FFFFF2;
+  --color-brick-500: #F01F25;
 
   --font-sans: var(--font-montserrat);
   --font-display: var(--font-amita);
 
   --container-content: 1280px;
 }
+
+.bg-brand-gradient {
+  background: linear-gradient(to top right,
+      var(--color-maroon-950) 0%,
+      var(--color-maroon-950) 30%,
+      var(--color-orange-700) 72%,
+      var(--color-orange-600) 100%);
+}
+
+.bg-header-gradient {
+  background: linear-gradient(90deg, #b04326 0%, #8f2622 55%, #6e1b17 100%);
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
