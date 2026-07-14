@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Amita } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/layout/Navbar";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -30,7 +31,13 @@ export default function RootLayout({
       lang="en"
       className={`${montserrat.variable} ${amita.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col bg-cream-50 text-maroon-950">
+        {/* Header (and later Footer) live here so EVERY page gets them
+            automatically — pages only render their own <main> content. */}
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        {/* <Footer /> will be added here in its step */}
+      </body>
     </html>
   );
 }
