@@ -1,30 +1,40 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* ------------------------------------------------------------------
+   * HIMALAYA GOLD — one fixed theme. No light/dark modes, ever.
+   * ---------------------------------------------------------------- */
 
-@theme inline {
-  /* Existing */
+  /* The three gradient colors (exact design values) */
+  --color-maroon-950: #2d0f11;
+  --color-orange-700: #9c310b;
+  --color-orange-600: #ba3a0a;
 
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Brand surfaces & accents */
+  --color-cream-50: #fffff2;
+  --color-brick-500: #f01f25;
 
-  /* Himalaya Gold */
+  /* Supporting tints — REQUIRED by existing components:
+     gold-300 (hero headline), gold-500/600 (Button secondary),
+     cream-100 (light text on dark surfaces), maroon-50 (hover tint) */
+  --color-cream-100: #faf4dd;
+  --color-gold-300: #f0c869;
+  --color-gold-500: #d9a635;
+  --color-gold-600: #b98621;
+  --color-maroon-50: #fbeceb;
 
-  --color-maroon-950: #2D0F11;
-  --color-orange-700: #9C310B;
-  --color-orange-600: #BA3A0A;
-  --color-cream-50: #FFFFF2;
-  --color-brick-500: #F01F25;
-
-  --font-sans: var(--font-montserrat);
+  --color-butter-100: #FFF0AE
+    /* Fonts — Montserrat for body (as --font-sans it becomes Tailwind's
+     default sans stack), Amita for display headings */
+    --font-sans: var(--font-montserrat);
   --font-display: var(--font-amita);
 
   --container-content: 1280px;
 }
 
+/* The ONE brand gradient, measured from the design:
+   diagonal toward the top-right corner, maroon holding to 30%,
+   through orange-700 at 72%, orange-600 at the corner. */
 .bg-brand-gradient {
   background: linear-gradient(to top right,
       var(--color-maroon-950) 0%,
@@ -33,20 +43,16 @@
       var(--color-orange-600) 100%);
 }
 
-.bg-header-gradient {
-  background: linear-gradient(90deg, #b04326 0%, #8f2622 55%, #6e1b17 100%);
+/* Display font for headings (body text inherits Montserrat via --font-sans) */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), Georgia, serif;
 }
 
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Visible focus ring for keyboard navigation (accessibility requirement) */
+:focus-visible {
+  outline: 2px solid var(--color-gold-500);
+  outline-offset: 2px;
 }
