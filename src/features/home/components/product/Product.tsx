@@ -76,7 +76,7 @@ export function Product() {
 
           {/* min-h reserves space so the section doesn't jump between
               short and long descriptions during the swap */}
-          <div aria-live="polite" className="min-h-[16rem] sm:min-h-[14rem]">
+          <div aria-live="polite" className="min-h-64 sm:min-h-56">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active.id}
