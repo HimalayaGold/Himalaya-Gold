@@ -1,7 +1,7 @@
 "use client";
 
 import { Children, useEffect, useRef, useState } from "react";
-import { useReducedMotion } from "framer-motion";
+// import { useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface MarqueeProps {
@@ -42,7 +42,7 @@ export function Marquee({
   const [containerWidth, setContainerWidth] = useState(0);
   const [visibleCount, setVisibleCount] = useState(visible.lg);
   const [isPaused, setIsPaused] = useState(false);
-  const prefersReducedMotion = useReducedMotion();
+  //const prefersReducedMotion = useReducedMotion();
 
   // Measure the container and pick the breakpoint's visible count.
   useEffect(() => {
@@ -74,7 +74,8 @@ export function Marquee({
 
   // Drive the scroll with rAF; wrap at halfWidth for a seamless loop.
   useEffect(() => {
-    if (prefersReducedMotion || isPaused || halfWidth === 0) return;
+    //if (prefersReducedMotion || isPaused || halfWidth === 0) return;
+    if (isPaused || halfWidth === 0) return;
 
     let frameId: number;
     let lastTime = performance.now();
@@ -92,7 +93,8 @@ export function Marquee({
 
     frameId = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frameId);
-  }, [prefersReducedMotion, isPaused, halfWidth, durationSeconds]);
+  }, [isPaused, halfWidth, durationSeconds]);
+  // }, [prefersReducedMotion, isPaused, halfWidth, durationSeconds]);
 
   const renderHalf = (ariaHidden: boolean) => (
     <div className="flex shrink-0" aria-hidden={ariaHidden || undefined}>
