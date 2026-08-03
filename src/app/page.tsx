@@ -1,3 +1,4 @@
+import { MarketPlace } from "@/features/home/components/marketPlace/MarketPlace";
 import { Certifications } from "@/features/home/components/certification/Certification";
 import { Hero } from "@/features/home/components/hero-section/Hero";
 import { Process } from "@/features/home/components/process/Process";
@@ -16,6 +17,7 @@ export default function Home() {
       <Process />
       <Certifications />
       <Product />
+      <MarketPlace />
       <Testimonials />
       <SocialGallery />
     </>
