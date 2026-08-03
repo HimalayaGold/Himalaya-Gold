@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Amita } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 
 
 const montserrat = Montserrat({
@@ -37,7 +38,7 @@ export default function RootLayout({
             automatically — pages only render their own <main> content. */}
         <Navbar />
         <main className="flex-1">{children}</main>
-        {/* <Footer /> will be added here in its step */}
+        <Footer />
       </body>
     </html>
   );
