@@ -5,10 +5,16 @@ import type { ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
 type ButtonVariant = "primary" | "secondary" | "outline";
 type ButtonSize = "md" | "lg";
 
+/**
+ * Variants are named by INTENT, not color, so a palette change never
+ * requires touching call sites.
+ * NOTE: every token used here must exist in globals.css @theme —
+ * Tailwind v4 silently generates nothing for unknown tokens.
+ */
 const VARIANT_STYLES: Record<ButtonVariant, string> = {
-  primary: "bg-maroon-600 text-cream-50 hover:bg-maroon-700",
-  secondary: "bg-gold-500 text-maroon-900 hover:bg-gold-600",
-  outline: "border border-cream-50 text-cream-50 hover:bg-cream-50 hover:text-maroon-700",
+  primary: "bg-brick-500 text-white hover:bg-orange-700",
+  secondary: "bg-orange-600 text-white hover:bg-orange-700",
+  outline: "border border-cream-50 text-cream-50 hover:bg-cream-50 hover:text-maroon-950",
 };
 
 const SIZE_STYLES: Record<ButtonSize, string> = {
@@ -17,7 +23,7 @@ const SIZE_STYLES: Record<ButtonSize, string> = {
 };
 
 const BASE_STYLES =
-  "inline-flex items-center justify-center rounded-full font-semibold tracking-wide transition-colors duration-200 focus-visible:outline-offset-4";
+  "inline-flex items-center justify-center rounded-full font-semibold tracking-wide transition-colors duration-200 focus-visible:outline-offset-4 disabled:cursor-not-allowed disabled:opacity-60";
 
 interface BaseProps {
   variant?: ButtonVariant;
