@@ -23,10 +23,10 @@
   --color-gold-600: #b98621;
   --color-maroon-50: #fbeceb;
 
-  --color-butter-100: #FFF0AE
-    /* Fonts — Montserrat for body (as --font-sans it becomes Tailwind's
+  --color-butter-100: #FFF0AE;
+  /* Fonts — Montserrat for body (as --font-sans it becomes Tailwind's
      default sans stack), Amita for display headings */
-    --font-sans: var(--font-montserrat);
+  --font-sans: var(--font-montserrat);
   --font-display: var(--font-amita);
 
   --container-content: 1280px;
