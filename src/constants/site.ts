@@ -74,11 +74,11 @@ export const SITE_CONFIG = {
 
   favicon: "/favicon.ico",
 
-  logo: "/images/logo/logo.svg",
+  logo: "/images/global/logo/logo.webp",
 
-  logoDark: "/images/logo/logo-dark.svg",
+  logoDark: "/images/global/logo/logo.webp",
 
-  ogImage: "/images/seo/og-image.jpg",
+  ogImage: "/images/global/logo/logo.webp",
 
   twitterImage: "/images/seo/twitter-image.jpg",
 

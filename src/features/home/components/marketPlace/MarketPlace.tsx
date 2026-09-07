@@ -39,7 +39,7 @@ export function MarketPlace() {
                   alt={market.name}
                   width={140}
                   height={40}
-                  className="h-5 w-auto object-contain sm:h-6"
+                  className="h-5 w-auto object-cover sm:h-6"
                 />
               </a>
             </li>
