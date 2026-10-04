@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/layout/Container";
 import { SITE_CONFIG } from "@/constants/site";
 import { HeroMedia } from "./HeroMedia";
+import { HeroText } from "./HeroText";
 
 export function Hero() {
   return (
@@ -26,6 +27,7 @@ export function Hero() {
           </p>
         </motion.div>
       </Container> */}
+      <HeroText />
     </section>
   );
 }
